@@ -1,0 +1,60 @@
+{
+	"schemaVersion": "2.0",
+	"data": [{
+		"ref": "6188e0cfa9467463aad12946",
+		"title": "La Ponderosa",
+		"type": "sale",
+		"price": 1100000,
+		"priceOnApplication": false,
+		"status": "under offer",
+		"instructionDate": "2021-11-08T08:33:19+00:00",
+		"market": "local",
+		"trp": 217,
+		"summary": "La Ponderosa is a spacious bungalow throughout with gardens, parking, garage and an agricultural field which has been well maintained by the current owner.",
+		"description": "La Ponderosa is a spacious bungalow throughout with gardens, parking, garage and an agricultural field which has been well maintained by the current owner. The accommodation comprises of a kitchen, sun lounge, living room, porch, four bedrooms, en-suite, bathroom, cloakroom and garage. Externally, to the front of the property is a garden laid to lawn with a range of mature shrubs and a driveway providing space for 3/4 vehicles leading to a garage. To the rear is an enclosed garden, overlooking the field, swimming pool, WC and small outbuilding. The agricultural field is adjacent to the property and offers circa 5097sq metres of land. \nLa Ponderosa offers a great opportunity to purchase a family home in move-in condition but with much scope also to personalise or upgrade. Viewing is highly recommended.",
+		"link": "https://www.sheppards.gg/buy-properties/la-ponderosa",
+		"address": {
+			"line1": "Rue De La Ronde Cheminee",
+			"line2": null,
+			"parish": "Castel",
+			"island": "Guernsey",
+			"postcode": "GY5 7GF"
+		},
+		"location": {
+			"lat": 49.483642,
+			"lon": -2.577733
+		},
+		"features": {
+			"bedrooms": 4,
+			"bathrooms": 3,
+			"parking": true,
+			"garden": true,
+			"garage": true
+		},
+		"info": [
+			"Detached bungalow on the outskirts of Castel",
+			"A short walk to both Port Soif and Grandes Rocques Bay",
+			"3 bedrooms and 1 study/bedroom",
+			"Parking for 4 vehicles and a garage",
+			"Large agricultural field adjacent to the property"
+		],
+		"images": [{
+				"url": "https://www.sheppards.gg/uploads/property_images/6188e0cfa9467463aad12946/sheppards-estate-agent-castel-la-ponderosa-guernsey-front_1636476735_768.jpg",
+				"description": "Front/parking"
+			},
+			{
+				"url": "https://www.sheppards.gg/uploads/property_images/6188e0cfa9467463aad12946/sheppards-estate-agent-castel-la-ponderosa-guernsey-entrance_1636476129_768.jpg",
+				"description": "Entrance"
+			},
+			{
+				"url": "https://www.sheppards.gg/uploads/property_images/6188e0cfa9467463aad12946/sheppards-estate-agent-castel-la-ponderosa-guernsey-sun-room_1636476857_768.jpg",
+				"description": "Sunroom (1)"
+			}
+		],
+		"plans": [{
+			"url": "https://www.sheppards.gg/uploads/property_images/6188e0cfa9467463aad12946/La_Ponderosa_-_floor_plan_1636475435.svg",
+			"description": "Floor plan"
+		}],
+		"brochure": "https://www.sheppards.gg/property-brochure/6188e0cfa9467463aad12946"
+	}]
+}
