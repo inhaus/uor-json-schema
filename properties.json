@@ -38,8 +38,9 @@
 			"Parking for 4 vehicles and a garage",
 			"Large agricultural field adjacent to the property"
 		],
-		"images": [{
-				"url": "https://www.sheppards.gg/uploads/property_images/6188e0cfa9467463aad12946/sheppards-estate-agent-castel-la-ponderosa-guernsey-front_1636476735_768.jpg",
+		"images": [
+			{
+				"url": "https://www.sheppards.gg/uploads/property_images/6188e0cfa9467463aad12946/sheppards-estate-agent-castel-la-ponderosa-guernsey-front_1636476735_768.JPG",
 				"description": "Front/parking"
 			},
 			{

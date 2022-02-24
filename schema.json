@@ -659,7 +659,7 @@
                                     "title": "Image URL",
                                     "description": "Fully-qualified image URL.",
                                     "format": "uri",
-                                    "pattern": "^https?:\/\/(.+\/)+.+([.](jpg|jpeg|webp|avif))$",
+                                    "pattern": "^https?:\/\/.*\/.*\\.(jpg|jpeg|webp|avif|JPG|JPEG)$",
                                     "minLength": 10,
                                     "maxLength": 255,
                                     "examples": [
