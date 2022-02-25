@@ -94,13 +94,13 @@ The following provides a quick reference to schema validation.
 - `market` [string] [required] Local or Open market. Accepted values: 
   - `local`
   - `open`
-- `trp` [int] [required] Tax on Real Property units.
+- `trp` [int] [required] Tax on Real Property units. `0` accepted if not known.
 - `summary` [string] Summary description of the property. HTML accepted.
 - `description` [string] [required] Long description of the property. HTML accepted.
 - `link` [string] [required] Fully-qualified URL of the property.
 - `address` [object] Address of the property.
-  - `line1` [string] [required] First line of the address.
-  - `line2` [string] Second line of the address.
+  - `line1` [string] First line of the address. Can be `null` if not known.
+  - `line2` [string] Second line of the address. Can be `null` if not known.
   - `parish` [string] [required] Parish if Guernsey. 'Alderney' or 'Sark' otherwise. Accepted values: 
     - `Castel`
     - `Forest`
@@ -118,7 +118,7 @@ The following provides a quick reference to schema validation.
     - `Guernsey`
     - `Alderney`
     - `Sark`
-  - `postcode` [string] [required] Postal code including a space. If postcode is confidential or unknown, set as `GY0 0ZZ`.
+  - `postcode` [string] [required] Postal code including a space. Can be `null` if postcode is confidential or unknown.
 - `location` [object] Latitude and longitude coordinates.
   - `lat` [number] [required] Latitude coordinates. Floating point number.
   - `lon` [number] [required] Longitude coordinates. Floating point number.
@@ -140,8 +140,8 @@ The following provides a quick reference to schema validation.
 - `info` [array] [required] An array of strings for key property information.
 - `images` [array] [required] An array of objects for property images.
   - `url` [string] [required] Fully-qualified URL of the image.
-  - `description` [string] Description of the image.
+  - `description` [string] Description of the image.  `null` accepted.
 - `plans` [array] [required] An array of objects for property plans.
-  - `url` [string] [required] Fully-qualified URL of the image.
-  - `description` [string] Description of the image.
-- `brochure` [string] Fully-qualified URL of an associated property brochure.
+  - `url` [string] Fully-qualified URL of the image. `null` accepted.
+  - `description` [string] Description of the image.  `null` accepted.
+- `brochure` [string] Fully-qualified URL of an associated property brochure.  `null` accepted.

@@ -402,7 +402,7 @@
                         "properties": {
                             "line1": {
                                 "id": "#line1",
-                                "type": "string",
+                                "type": ["string", "null"],
                                 "title": "Address Line 1",
                                 "description": "First line of the address.",
                                 "examples": [
@@ -459,7 +459,7 @@
                             },
                             "postcode": {
                                 "id": "#postcode",
-                                "type": "string",
+                                "type": ["string", "null"],
                                 "title": "Postcode",
                                 "description": "Postal code. Including a space.",
                                 "pattern": "^((GY[0-9]{1,2}) ([0-9][A-Z]{2}))$",
@@ -668,7 +668,7 @@
                                 },
                                 "description": {
                                     "id": "#description",
-                                    "type": "string",
+                                    "type": ["string", "null"],
                                     "title": "Image description",
                                     "description": "Describe the image.",
                                     "examples": [
@@ -715,7 +715,7 @@
                             "properties": {
                                 "url": {
                                     "id": "#url",
-                                    "type": "string",
+                                    "type": ["string", "null"],
                                     "title": "Property Plan URL",
                                     "description": "Fully-qualified image URL.",
                                     "format": "uri",
@@ -728,7 +728,7 @@
                                 },
                                 "description": {
                                     "id": "#description",
-                                    "type": "string",
+                                    "type": ["string", "null"],
                                     "title": "Property Plan Description",
                                     "description": "Description of the property plan.",
                                     "examples": [
