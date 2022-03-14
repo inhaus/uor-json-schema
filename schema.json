@@ -488,7 +488,7 @@
                         "properties": {
                             "lat": {
                                 "id": "#lat",
-                                "type": "number",
+                                "type": ["number", "null"],
                                 "title": "Latitude",
                                 "description": "Latitude coordinates. Floating point number.",
                                 "minimum": -90,
@@ -499,7 +499,7 @@
                             },
                             "lon": {
                                 "id": "#lon",
-                                "type": "number",
+                                "type": ["number", "null"],
                                 "title": "Longitude",
                                 "description": "Longitude coordinates. Floating point number.",
                                 "minimum": -180,
