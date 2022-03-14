@@ -120,8 +120,8 @@ The following provides a quick reference to schema validation.
     - `Sark`
   - `postcode` [string] [required] Postal code including a space. Can be `null` if postcode is confidential or unknown.
 - `location` [object] Latitude and longitude coordinates.
-  - `lat` [number] [required] Latitude coordinates. Floating point number.
-  - `lon` [number] [required] Longitude coordinates. Floating point number.
+  - `lat` [number] [required] Latitude coordinates. Floating point number or `null`.
+  - `lon` [number] [required] Longitude coordinates. Floating point number or `null`.
 - `features` [object] Property features.
   - `bedrooms` [int] [required] Number of bedrooms.
   - `bathrooms` [int] [required] Number of bathrooms.
