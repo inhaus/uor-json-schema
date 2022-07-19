@@ -676,6 +676,12 @@
                                         "Kitchen",
                                         "Lounge"
                                     ]
+                                },
+                                "order": {
+                                    "id": "#image-order",
+                                    "type": ["integer", "null"],
+                                    "title": "Image order",
+                                    "description": "Display order of images represented as an integer value."
                                 }
                             },
                             "additionalProperties": false
