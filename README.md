@@ -1,20 +1,25 @@
-# Under One Roof JSON Schema
+# Under One Roof - JSON Schema
 
 This repository tracks the [JSON Schema](https://json-schema.org/) document used to validate property feeds.
 
-## How to use
+## Branches
 
-### Schema
+The `main` branch includes ALL files including `Pipfile`'s to provide a quick and convenient way to run schema validation using [jsonschema](https://github.com/Julian/jsonschema) (Python) on any changes made before committing. Instructions on how to use are included below.
 
-To validate against this schema you can choose one of [the implementations](https://json-schema.org/implementations.html#validators) for your language of choice and refer to the relevant documentation. Use `schema.json` to validate your JSON document against. `properties.json` has been provided as an example.
+The `release` branch contains only the files for distribution. These include:
 
-### This repo
+- `properties.json` - Example json file to validate.
+- `reference.md` - Schema reference documentation.
+- `schema.json` - Schema to validate against.
 
-Optionally a Python implementation using [jsonschema](https://github.com/Julian/jsonschema) is included in this repo.
 
-To use the Python implementation simply clone this repository, and install the dependencies (requires [Pipenv](https://pipenv.pypa.io/en/latest/)):
+## How to use  
 
-```
+A Python implementation using [jsonschema](https://github.com/Julian/jsonschema) is included in this repo for convenience. you can choose one of [the implementations](https://json-schema.org/implementations.html#validators) for your language of choice and refer to the relevant documentation.
+
+To use the included Python implementation, simply clone this repository, and install the dependencies (requires [Pipenv](https://pipenv.pypa.io/en/latest/)):
+
+```bash
 pipenv install
 ```
 
@@ -22,19 +27,20 @@ An example data file called `properties.json` has been included to validate agai
 
 To validate via the CLI:
 
-```
+```bash
 pipenv run jsonschema -i properties.json schema.json
 ```
-`pipenv run` activates the virtual environment with required dependencies.    
-`jsonschema` is the name of the [schema validator](https://github.com/Julian/jsonschema).    
-`-i properties.json` specifies a path to a JSON file to validate.    
-`schema.json` provides the schema to validate the JSON document against.    
 
-Any validation errors will be listed in the output. If there are no errors nothing will be returned.
+`pipenv run` activates the virtual environment with required dependencies.
+`jsonschema` is the name of the [schema validator](https://github.com/Julian/jsonschema).
+`-i properties.json` specifies a path to a JSON file to validate.
+`schema.json` provides the schema to validate the JSON document against.
+
+Any validation errors will be listed in the output. **If there are no errors nothing will be returned.**
 
 For more descriptive info you can format the output. E.g.
 
-```
+```bash
 $ pipenv run jsonschema -i properties.json schema.json -o pretty
 ===[ValidationError]===(properties.json)===
 
@@ -54,7 +60,7 @@ On instance['data'][0]['price']:
 
 A successful validation will be confirmed when invalidations have been corrected:
 
-```
+```bash
 $ pipenv run jsonschema -i properties.json schema.json -o pretty
 ===[SUCCESS]===(properties.json)===
 ```
@@ -62,87 +68,42 @@ $ pipenv run jsonschema -i properties.json schema.json -o pretty
 Programmatic validation can also be performed for more detailed handling. Please refer to the [jsonschema docs](https://python-jsonschema.readthedocs.io/en/stable/).
 
 
----
-## Schema Refrence
+## How to edit and create a release
 
-The following provides a quick reference to schema validation.
+Steps in making edits and a corresponding release:
 
-### Root
+1. Make changes to the schema on the `main` branch.
+2. Validate the changes before committing using the above methods.
+3. Ensure that the example `properties.json` file is updated to reflect the changes.
+4. Update `schemaVersion` in `properties.json` to reflect the new release version.
+5. Checkout the `release` branch.
+6. Pull in the changes from `main` but only for `properties.json` and `schema.json`.
 
-- `schema` [string] [required] Corresponds to schema version. No need to edit.
-- `data` [array] [required] Array key for property data.
+You can pull in changes to specific _files_ by specifying the paths:
 
+```bash
+git checkout main properties.json schema.json
+```
 
-### Data
+7. Make any required updates to `reference.md` if the references require updating.
+8. Commit the changes to the `release` branch.
+9. Create a new tag on the `release` branch to reflect the new release version. E.g.
 
-- `ref` [string] [required] Agent property reference or UUID. Must be unique. 
-- `title` [string] [required] Title of the property. Plaintext only.
-- `type` [string] [required] Transaction type. Accepted values: 
-  - `sale`
-  - `rent`
-- `price` [int] [required] Price in Pound Sterling. No spaces or commas. If 'POA', set price to `0` and ensure that `priceOnApplication` is set to `true`.
-- `priceOnApplication` [boolean] True if the property price is POA. False otherwise. Accepted values:
-  - `true`
-  - `false`
-- `status` [string] [required] Availability status of the property. Accepted values:
-  - `available`
-  - `under offer` If type: sale
-  - `sold` If type: sale
-  - `let agreed` If type: rent
-  - `let` If type: rent
-- `instructionDate` [string] [required] The date the property was placed on the market. ISO 8601 format with optional timezone. E.g. `"2021-11-08T08:33:19+00:00"`.
-- `market` [string] [required] Local or Open market. Accepted values: 
-  - `local`
-  - `open`
-- `trp` [int] [required] Tax on Real Property units. `0` accepted if not known.
-- `summary` [string] Summary description of the property. HTML accepted.
-- `description` [string] [required] Long description of the property. HTML accepted.
-- `link` [string] [required] Fully-qualified URL of the property.
-- `address` [object] Address of the property.
-  - `line1` [string] First line of the address. Can be `null` if not known.
-  - `line2` [string] Second line of the address. Can be `null` if not known.
-  - `parish` [string] [required] Parish if Guernsey. 'Alderney' or 'Sark' otherwise. Accepted values: 
-    - `Castel`
-    - `Forest`
-    - `St. Andrew`
-    - `St. Martin`
-    - `St. Peter Port`
-    - `St. Pierre du Bois`
-    - `St. Sampson`
-    - `St. Saviour`
-    - `Torteval `
-    - `Vale`
-    - `Alderney`
-    - `Sark`
-  - `island` [string] [required] Island of the Guernsey Bailiwick. Accepted values:
-    - `Guernsey`
-    - `Alderney`
-    - `Sark`
-  - `postcode` [string] [required] Postal code including a space. Can be `null` if postcode is confidential or unknown.
-- `location` [object] Latitude and longitude coordinates.
-  - `lat` [number] [required] Latitude coordinates. Floating point number or `null`.
-  - `lon` [number] [required] Longitude coordinates. Floating point number or `null`.
-- `features` [object] Property features.
-  - `bedrooms` [int] [required] Number of bedrooms.
-  - `bathrooms` [int] [required] Number of bathrooms.
-  - `parking` [boolean] Does the property have parking? Accepted values:
-    - `true`
-    - `false`
-    - `null`
-  - `garden` [boolean] Does the property have a garden? Accepted values:
-    - `true`
-    - `false`
-    - `null`
-  - `garage` [boolean] Does the property have a garage? Accepted values:
-    - `true`
-    - `false`
-    - `null`
-- `info` [array] [required] An array of strings for key property information. Array can be empty if none.
-- `images` [array] [required] An array of objects for property images. Array can be empty if none.
-  - `url` [string] [required] Fully-qualified URL of the image.
-  - `description` [string] Description of the image.  `null` accepted.
-  - `order` [int] Optional display order.
-- `plans` [array] [required] An array of objects for property plans. Array can be empty if none.
-  - `url` [string] Fully-qualified URL of the image. `null` accepted.
-  - `description` [string] Description of the image.  `null` accepted.
-- `brochure` [string] Fully-qualified URL of an associated property brochure.  `null` accepted.
+```bash
+git tag v2.0.1
+```
+
+10. Push the changes to the remote repository and include all tags:
+
+```bash
+git push origin --tags
+```
+
+11. In the [Tags section](https://github.com/inhaus/uor-json-schema/tags) you should see the new tag listed in the repo.
+12. In the Release section click "Draft new release".
+13. Select "Target: release" as the branch.
+14. Select the latest tag that has just been added.
+15. Add release title and summary details in a style similar to previous releases.
+16. Preview the release to ensure it's correct before clicking "Publish release".
+17. The release should now be created. Download the assets file to check it contains the correct files (`properties.json`, `schema.json`, `reference.md`). There should not be any other files included.
+18. If all is correct the Assets zip file can now be distributed.
