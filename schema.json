@@ -6,7 +6,7 @@
     "description": "The root schema comprises the entire JSON document.",
     "examples": [
         {
-            "schemaVersion": "2.0.3",
+            "schemaVersion": "2.0.4",
             "data": [
                 {
                     "ref": "6188e0cfa9467463aad12946",
