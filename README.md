@@ -100,7 +100,7 @@ git push origin --tags
 ```
 
 11. In the [Tags section](https://github.com/inhaus/uor-json-schema/tags) you should see the new tag listed in the repo.
-12. In the Release section click "Draft new release".
+12. In the [Release section](https://github.com/inhaus/uor-json-schema/releases) click "Draft new release".
 13. Select "Target: release" as the branch.
 14. Select the latest tag that has just been added.
 15. Add release title and summary details in a style similar to previous releases.
