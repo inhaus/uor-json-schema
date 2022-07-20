@@ -6,7 +6,7 @@
     "description": "The root schema comprises the entire JSON document.",
     "examples": [
         {
-            "schemaVersion": "2.0.4",
+            "schemaVersion": "2.0.1",
             "data": [
                 {
                     "ref": "6188e0cfa9467463aad12946",
@@ -81,9 +81,9 @@
             "type": "string",
             "title": "Schema version",
             "description": "Corresponds to schema version. No need to edit.",
-            "enum": ["2.0.3"],
+            "enum": ["2.0.1"],
             "examples": [
-                "2.0.3"
+                "2.0.1"
             ]
         },
         "data": {
