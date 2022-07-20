@@ -41,7 +41,8 @@
 		"images": [
 			{
 				"url": "https://www.sheppards.gg/uploads/property_images/6188e0cfa9467463aad12946/sheppards-estate-agent-castel-la-ponderosa-guernsey-front_1636476735_768.JPG",
-				"description": "Front/parking"
+				"description": "Front/parking",
+				"order": 1
 			},
 			{
 				"url": "https://www.sheppards.gg/uploads/property_images/6188e0cfa9467463aad12946/sheppards-estate-agent-castel-la-ponderosa-guernsey-entrance_1636476129_768.jpg",

@@ -141,6 +141,7 @@ The following provides a quick reference to schema validation.
 - `images` [array] [required] An array of objects for property images.
   - `url` [string] [required] Fully-qualified URL of the image.
   - `description` [string] Description of the image.  `null` accepted.
+  - `order` [int] Optional display order.
 - `plans` [array] [required] An array of objects for property plans.
   - `url` [string] Fully-qualified URL of the image. `null` accepted.
   - `description` [string] Description of the image.  `null` accepted.
