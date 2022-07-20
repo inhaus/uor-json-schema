@@ -133,16 +133,16 @@ The following provides a quick reference to schema validation.
     - `true`
     - `false`
     - `null`
-  - `garage`  [boolean] Does the property have a garage? Accepted values:
+  - `garage` [boolean] Does the property have a garage? Accepted values:
     - `true`
     - `false`
     - `null`
-- `info` [array] [required] An array of strings for key property information.
-- `images` [array] [required] An array of objects for property images.
+- `info` [array] [required] An array of strings for key property information. Array can be empty if none.
+- `images` [array] [required] An array of objects for property images. Array can be empty if none.
   - `url` [string] [required] Fully-qualified URL of the image.
   - `description` [string] Description of the image.  `null` accepted.
   - `order` [int] Optional display order.
-- `plans` [array] [required] An array of objects for property plans.
+- `plans` [array] [required] An array of objects for property plans. Array can be empty if none.
   - `url` [string] Fully-qualified URL of the image. `null` accepted.
   - `description` [string] Description of the image.  `null` accepted.
 - `brochure` [string] Fully-qualified URL of an associated property brochure.  `null` accepted.
