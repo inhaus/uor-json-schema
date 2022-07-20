@@ -700,7 +700,7 @@
                                 }
                             ]
                         ],
-                        "additionalItems": true,
+                        "additionalItems": false,
                         "items": {
                             "id": "#items",
                             "type": "object",
