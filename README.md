@@ -4,7 +4,7 @@ This repository tracks the [JSON Schema](https://json-schema.org/) document used
 
 ## Branches
 
-The `main` branch includes ALL files including `Pipfile`'s to provide a quick and convenient way to run schema validation using [jsonschema](https://github.com/Julian/jsonschema) (Python) on any changes made before committing. Instructions on how to use are included below.
+The `main` branch includes ALL files including `Pipfile`'s to provide a quick and convenient way to run schema validation using [jsonschema](https://github.com/Julian/jsonschema) (Python) on any changes made before committing. Instructions on how to use it are included below.
 
 The `release` branch contains only the files for distribution. These include:
 
@@ -31,10 +31,10 @@ To validate via the CLI:
 pipenv run jsonschema -i properties.json schema.json
 ```
 
-`pipenv run` activates the virtual environment with required dependencies.
-`jsonschema` is the name of the [schema validator](https://github.com/Julian/jsonschema).
-`-i properties.json` specifies a path to a JSON file to validate.
-`schema.json` provides the schema to validate the JSON document against.
+`pipenv run` activates the virtual environment with required dependencies.    
+`jsonschema` is the name of the [schema validator](https://github.com/Julian/jsonschema).    
+`-i properties.json` specifies a path to a JSON file to validate.    
+`schema.json` provides the schema to validate the JSON document against.    
 
 Any validation errors will be listed in the output. **If there are no errors nothing will be returned.**
 
@@ -74,7 +74,7 @@ Steps in making edits and a corresponding release:
 
 1. Make changes to the schema on the `main` branch.
 2. Validate the changes before committing using the above methods.
-3. Ensure that the example `properties.json` file is updated to reflect the changes.
+3. Ensure that the example `properties.json` file is updated to reflect the changes if relevant.
 4. Update `schemaVersion` in `properties.json` to reflect the new release version.
 5. Checkout the `release` branch.
 6. Pull in the changes from `main` but only for `properties.json` and `schema.json`.
