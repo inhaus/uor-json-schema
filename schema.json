@@ -81,7 +81,7 @@
             "type": "string",
             "title": "Schema version",
             "description": "Corresponds to schema version. No need to edit.",
-            "enum": ["2.0.1"],
+            "enum": ["2.0.4"],
             "examples": [
                 "2.0.1"
             ]
