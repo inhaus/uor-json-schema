@@ -28,7 +28,7 @@ An example data file called `properties.json` has been included to validate agai
 To validate via the CLI:
 
 ```bash
-pipenv run jsonschema -i properties.json schema.json
+pipenv run jsonschema -i properties.json schema.json -o pretty
 ```
 
 `pipenv run` activates the virtual environment with required dependencies.    
@@ -76,8 +76,9 @@ Steps in making edits and a corresponding release:
 2. Validate the changes before committing using the above methods.
 3. Ensure that the example `properties.json` file is updated to reflect the changes if relevant.
 4. Update `schemaVersion` in `properties.json` to reflect the new release version.
-5. Checkout the `release` branch.
-6. Pull in the changes from `main` but only for `properties.json` and `schema.json`.
+5. Commit the changes locally but don't push to remote yet.
+6. Checkout the `release` branch. (`git switch release`)
+7. Pull in the changes from `main` but only for `properties.json` and `schema.json`.
 
 You can pull in changes to specific _files_ by specifying the paths:
 
@@ -85,25 +86,25 @@ You can pull in changes to specific _files_ by specifying the paths:
 git checkout main properties.json schema.json
 ```
 
-7. Make any required updates to `reference.md` if the references require updating.
-8. Commit the changes to the `release` branch.
-9. Create a new tag on the `release` branch to reflect the new release version. E.g.
+8. Make any required updates to `reference.md` if the references require updating.
+9. Commit the changes to the `release` branch but don't push to remote yet.
+10. Create a new tag on the `release` branch to reflect the new release version. E.g.
 
 ```bash
 git tag v2.0.1
 ```
 
-10. Push the changes to the remote repository and include all tags:
+11. Push the changes to the remote repository and include all tags:
 
 ```bash
 git push origin --tags
 ```
 
-11. In the [Tags section](https://github.com/inhaus/uor-json-schema/tags) you should see the new tag listed in the repo.
-12. In the [Release section](https://github.com/inhaus/uor-json-schema/releases) click "Draft new release".
-13. Select "Target: release" as the branch.
-14. Select the latest tag that has just been added.
-15. Add release title and summary details in a style similar to previous releases.
-16. Preview the release to ensure it's correct before clicking "Publish release".
-17. The release should now be created. Download the assets file to check it contains the correct files (`properties.json`, `schema.json`, `reference.md`). There should not be any other files included.
-18. If all is correct the Assets zip file can now be distributed.
+12. In the [Tags section](https://github.com/inhaus/uor-json-schema/tags) you should see the new tag listed in the repo.
+13. In the [Release section](https://github.com/inhaus/uor-json-schema/releases) click "Draft new release".
+14. Select "Target: release" as the branch.
+15. Select the latest tag that has just been added.
+16. Add release title and summary details in a style similar to previous releases.
+17. Preview the release to ensure it's correct before clicking "Publish release".
+18. The release should now be created. Download the assets file to check it contains the correct files (`properties.json`, `schema.json`, `reference.md`). There should not be any other files included.
+19. If all is correct the Assets zip file can now be distributed.
