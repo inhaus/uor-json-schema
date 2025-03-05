@@ -73,7 +73,7 @@ The following provides a quick reference to schema validation.
     - `false`
     - `null`
 - `info` [array] [required] An array of strings for key property information. Array can be empty if none.
-- `images` [array] [required] An array of objects for property images. Array can be empty if none.
+- `images` [array] [required] An array of objects for property images. Array can be empty if none. Accepted image formats: jpg|jpeg|webp|avif|png
   - `url` [string] [required] Fully-qualified URL of the image.
   - `description` [string] Description of the image.  `null` accepted.
   - `order` [int] Optional display order.
